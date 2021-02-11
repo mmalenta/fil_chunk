@@ -49,7 +49,7 @@ void Filterbank::read_data(float skip, float read) {
   _data = new unsigned char[full_read];
   fil_file.read(reinterpret_cast<char*>(_data), full_read * sizeof(char));
 
-  _double_header_values["mjd"] = _double_header_values["tstart"] + skip / 86400.0;
+  _double_header_values["tstart"] = _double_header_values["tstart"] + skip / 86400.0;
   _int_header_values["nsamps"] = time_samples_read;
 
 }
